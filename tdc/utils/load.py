@@ -236,7 +236,7 @@ def property_dataset_load(name, path, target, dataset_names):
 	if target is None:
 		target = 'Y'
 	name = download_wrapper(name, path, dataset_names)
-	print_sys('Loading...')
+	# print_sys('Loading...')
 	df = pd_load(name, path)
 	try:
 		if target is not None:
@@ -268,7 +268,7 @@ def interaction_dataset_load(name, path, target, dataset_names, aux_column):
 	    pandas.Series: three series (entity 1 representation, entity 2 representation, entity id 1, entity id 2, label)
 	"""
 	name = download_wrapper(name, path, dataset_names)
-	print_sys('Loading...')
+	# print_sys('Loading...')
 	df = pd_load(name, path)
 	try:
 		if target is None:
@@ -308,7 +308,7 @@ def multi_dataset_load(name, path, dataset_names):
 	    pandas.DataFrame: the raw dataframe
 	"""
 	name = download_wrapper(name, path, dataset_names)
-	print_sys('Loading...')
+	# print_sys('Loading...')
 	df = pd_load(name, path)
 	return df
 
@@ -325,7 +325,7 @@ def generation_paired_dataset_load(name, path, dataset_names, input_name, output
 	    pandas.Series: two series (entity 1 representation, label)
 	"""
 	name = download_wrapper(name, path, dataset_names)
-	print_sys('Loading...')
+	# print_sys('Loading...')
 	df = pd_load(name, path)
 	return df[input_name], df[output_name]
 
@@ -343,7 +343,7 @@ def three_dim_dataset_load(name, path, dataset_names):
 	    str: the name of the dataset
 	"""
 	name = zip_data_download_wrapper(name, path, dataset_names)
-	print_sys('Loading...')
+	# print_sys('Loading...')
 	df = pd_load(name, path)
 	return df, os.path.join(path, name), name
 
@@ -360,7 +360,7 @@ def distribution_dataset_load(name, path, dataset_names, column_name):
 	    pandas.Series: the input list of molecules representation
 	"""
 	name = download_wrapper(name, path, dataset_names)
-	print_sys('Loading...')
+	# print_sys('Loading...')
 	df = pd_load(name, path)
 	return df[column_name]
 
@@ -376,7 +376,7 @@ def generation_dataset_load(name, path, dataset_names):
 	    pandas.Series: the data series
 	"""
 	name = download_wrapper(name, path, dataset_names)
-	print_sys('Loading...')
+	# print_sys('Loading...')
 	df = pd_load(name, path)
 	return df['input'], df['target']
 
