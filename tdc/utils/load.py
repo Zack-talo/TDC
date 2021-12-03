@@ -38,7 +38,8 @@ def download_wrapper(name, path, dataset_names):
 		os.mkdir(path)
 
 	if os.path.exists(os.path.join(path, name + '.' + name2type[name])):
-		print_sys('Found local copy...')
+		# print_sys('Found local copy...')
+		continue
 	else:
 		print_sys("Downloading...")
 		dataverse_download(dataset_path, path, name, name2type)
@@ -64,7 +65,8 @@ def zip_data_download_wrapper(name, path, dataset_names):
 		os.mkdir(path)
 
 	if os.path.exists(os.path.join(path, name)):
-		print_sys('Found local copy...')
+		# print_sys('Found local copy...')
+		continue
 	else:
 		print_sys('Downloading...')
 		dataverse_download(dataset_path, path, name, name2type)
@@ -117,7 +119,8 @@ def oracle_download_wrapper(name, path, oracle_names):
 		os.mkdir(path)
 
 	if os.path.exists(os.path.join(path, name + '.' + oracle2type[name])):
-		print_sys('Found local copy...')
+		# print_sys('Found local copy...')
+		continue
 	else:
 		print_sys("Downloading Oracle...")
 		dataverse_download(dataset_path, path, name, oracle2type) ## to-do to-check
@@ -143,7 +146,8 @@ def receptor_download_wrapper(name, path):
 		os.mkdir(path)
 
 	if os.path.exists(os.path.join(path, name + '.pdbqt')):
-		print_sys('Found local copy...')
+		# print_sys('Found local copy...')
+		continue
 	else:
 		print_sys("Downloading receptor...")
 		receptor2type = defaultdict(lambda:'pdbqt')
@@ -173,7 +177,8 @@ def bm_download_wrapper(name, path):
 		os.mkdir(path)
 
 	if os.path.exists(os.path.join(path, name)):
-		print_sys('Found local copy...')
+		# print_sys('Found local copy...')
+		continue
 	else:
 		print_sys('Downloading Benchmark Group...')
 		dataverse_download(dataset_path, path, name, benchmark2type)
