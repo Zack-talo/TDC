@@ -73,7 +73,7 @@ def zip_data_download_wrapper(name, path, dataset_names):
 		print_sys('Extracting zip file...')
 		with ZipFile(os.path.join(path, name + '.zip'), 'r') as zip:
 			zip.extractall(path = os.path.join(path))
-		print_sys("Done!")
+		# print_sys("Done!")
 	return name
 
 def dataverse_download(url, path, name, types):
@@ -124,7 +124,7 @@ def oracle_download_wrapper(name, path, oracle_names):
 	else:
 		print_sys("Downloading Oracle...")
 		dataverse_download(dataset_path, path, name, oracle2type) ## to-do to-check
-		print_sys("Done!")
+		# print_sys("Done!")
 	return name
 
 
@@ -152,7 +152,7 @@ def receptor_download_wrapper(name, path):
 		print_sys("Downloading receptor...")
 		receptor2type = defaultdict(lambda:'pdbqt')
 		dataverse_download(dataset_path, path, name, receptor2type) ## to-do to-check
-		print_sys("Done!")
+		# print_sys("Done!")
 	return name
 
 
@@ -185,7 +185,7 @@ def bm_download_wrapper(name, path):
 		print_sys('Extracting zip file...')
 		with ZipFile(os.path.join(path, name + '.zip'), 'r') as zip:
 			zip.extractall(path = os.path.join(path))
-		print_sys("Done!")
+		# print_sys("Done!")
 	return name
 
 def pd_load(name, path):
