@@ -33,4 +33,4 @@ class Tox(single_pred_dataset.DataLoader):
                          dataset_names=dataset_names["Tox"], convert_format = convert_format)
         if print_stats:
             self.print_stats()
-        print('Done!', flush = True, file = sys.stderr)
+        #print('Done!', flush = True, file = sys.stderr)
